@@ -5,7 +5,7 @@ import logo from "../../../Images/logo.png"
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+      <Container className='text-center'>
         <div>
           <img className='w-25 mx-2' src={logo} alt="" />
           <Navbar.Brand href="#home">In Focus</Navbar.Brand>
