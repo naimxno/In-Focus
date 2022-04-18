@@ -5,9 +5,11 @@ const About = () => {
   return (
     <div>
       <img className='d-block w-50 mx-auto p-5' src={myImg} alt="" />
-      <p className='p-5'>I want to be a web developer in this year.for this i have to do 6 hours to 8 hours of
-        coding every day.i will not give up,i must finish it.it's easier and more beautiful for me to be with the
-        programming-hero on this journey</p>
+      <p className='p-5'>
+        <strong>
+          I'm  Naimur Rahaman. I want to become a web developer. I have worked hard to complete web development course from programmeing hero. I come to the end of the course. My dream is going to come true.
+        </strong>
+      </p>
     </div>
   );
 };

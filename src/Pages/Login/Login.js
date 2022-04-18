@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialLogin from './SocialLogin';
@@ -11,6 +11,9 @@ const Login = () => {
   const passwordRef = useRef('');
   const navigate = useNavigate();
   const location = useLocation();
+  let errorElement;
+
+
 
   let from = location.state?.form?.pathname || "/";
   const [
@@ -19,9 +22,15 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth)
 
   if (user) {
     navigate(from, { replace: true });
+  }
+  if (error) {
+    errorElement = <div>
+      <p className='text-danger'>Error: {error?.message}</p>
+    </div>
   }
 
   const handleSubmit = event => {
@@ -32,6 +41,11 @@ const Login = () => {
   }
   const navigateRegister = e => {
     navigate("/register")
+  }
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+    alert('Sent email');
   }
   return (
     <div>
@@ -50,10 +64,12 @@ const Login = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Login
         </Button>
       </Form>
+      {errorElement}
       <p className='text-center'>New To website <Link className='text-danger pe-auto text-decoration-none' to="/register" onClick={navigateRegister}>Please Register</Link> </p>
+      <p className='text-center'> Forget Password? <Link className='text-primary pe-auto text-decoration-none' to="/register" onClick={resetPassword}>Reset Password</Link> </p>
       <SocialLogin></SocialLogin>
     </div>
   );
