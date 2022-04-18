@@ -12,7 +12,6 @@ const SocialLogin = () => {
       </div>
       <div className='d-flex w-50 mx-auto justify-content-center my-2'>
         <button className='border border-secondary btn btn-white px-5 m-2 '> <img src={google} alt="" /> Google</button>
-        <button className='border border-secondary btn btn-white px-5 m-2'> <img src={facebook} alt="" /> Facebook</button>
       </div>
     </div>
   );

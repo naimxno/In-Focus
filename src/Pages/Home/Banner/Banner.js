@@ -16,8 +16,8 @@ const Banner = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>In Focus</h3>
+          <p>“If your photos aren’t good enough, then you’re not close enough.”</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -28,8 +28,8 @@ const Banner = () => {
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>In Focus</h3>
+          <p>“In photography there is a reality so subtle that it becomes more real than reality.”</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,8 +40,8 @@ const Banner = () => {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>In Focus</h3>
+          <p>“Taking an image, freezing a moment, reveals how rich reality truly is.”</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
