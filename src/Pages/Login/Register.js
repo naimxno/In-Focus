@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogin from './SocialLogin';
 
 
@@ -17,19 +17,21 @@ const Register = () => {
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    createUserWithEmailAndPassword(email, password)
+    await createUserWithEmailAndPassword(email, password)
+    await updateProfile({ displayName: name });
+    alert('Updated profile');
+    navigate("/home");
+
   }
   const navigateToLogin = e => {
     navigate("/login")
-  }
-  if (user) {
-    navigate("/home");
   }
 
   return (

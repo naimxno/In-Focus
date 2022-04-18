@@ -5,8 +5,9 @@ const ServiceDetail = () => {
   const { serviceId } = useParams()
   return (
     <div>
-      <h1>ServiceDetail : {serviceId}</h1>
-      <Link to='/checkout'><button>Proceed checkout</button></Link>
+      <h1 className='text-center m-2'>ServiceDetail : {serviceId}</h1>
+      <Link className='text-decoration-none' to='/checkout'>
+        <button className='btn btn-success mx-auto m-5 d-block '>Proceed checkout</button></Link>
     </div>
   );
 };

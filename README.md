@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# In Focus
+live site Link [In Focus](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## My website is about photography. This website have six services about photography.
+## Useing this website people will get benefets.
+## I have hosted this website in google firebase.
+## I have used google firebase for Authentication.
+## My website has a unique name.This website is multi page website.
+## The list of technologies (frameworks, libraries) used in my  project is Bootstrap and reactjs.
 
-## Available Scripts
 
 In the project directory, you can run:
 
